@@ -1,9 +1,6 @@
 package com.emidiogustavo.workshopmongo.DTO;
 
 import java.io.Serializable;
-import java.util.Objects;
-
-import org.springframework.data.annotation.Id;
 
 import com.emidiogustavo.workshopmongo.domain.User;
 
