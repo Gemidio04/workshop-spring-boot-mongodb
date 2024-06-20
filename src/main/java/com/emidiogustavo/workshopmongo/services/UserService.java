@@ -1,4 +1,4 @@
-package com.emidiogustavo.workshopmongo.service;
+package com.emidiogustavo.workshopmongo.services;
 
 import java.util.List;
 
@@ -7,6 +7,7 @@ import org.springframework.stereotype.Service;
 
 import com.emidiogustavo.workshopmongo.domain.User;
 import com.emidiogustavo.workshopmongo.repository.UserRepository;
+import com.emidiogustavo.workshopmongo.services.exception.ObjectNotFoundException;
 
 @Service
 public class UserService {
@@ -16,6 +17,11 @@ public class UserService {
 	
 	public List<User> findAll(){
 		return repo.findAll();
+	}
+	
+	public User findById(String id) {
+		return repo.findById(id).orElseThrow(() -> 
+        new ObjectNotFoundException("Objeto não encontrado"));
 	}
 	
 	
