@@ -77,17 +77,17 @@ public class Post implements Serializable {
 		this.author = author;
 	}
 	
-	@Override
-	public int hashCode() {
-		return Objects.hash(id);
-	}
-
 	public List<CommentDTO> getComments() {
 		return comments;
 	}
 
 	public void setComments(List<CommentDTO> comments) {
 		this.comments = comments;
+	}
+	
+	@Override
+	public int hashCode() {
+		return Objects.hash(id);
 	}
 	
 	@Override
